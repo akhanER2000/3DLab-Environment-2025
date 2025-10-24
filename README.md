@@ -11,7 +11,7 @@ Integración de Inteligencia Artificial (IA): Implementación de algoritmos de I
 Cumplimiento de Requisitos de Stakeholders: El proyecto se desarrolla en estrecha colaboración con nuestros stakeholders para asegurar que cumpla con sus necesidades y expectativas.
 Este repositorio contiene:
 
-El código fuente del proyecto, incluyendo scripts de simulación, lógica de la interfaz de usuario y algoritmos de IA.
+El código fuente del proyecto, incluyendo scripts de simulación, lógica de la interfaz de usuario, entre otras.
 Modelos 3D de equipos de laboratorio y sustancias químicas.
 Documentación técnica y manuales de usuario.
 Recursos adicionales, como imágenes, sonidos y videos.
