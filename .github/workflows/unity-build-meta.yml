@@ -21,13 +21,28 @@ jobs:
         with:
           lfs: true # Esto reemplaza el paso 'checkout-lfs' que falló
 
+      # --- ¡¡NUEVO PASO!! ---
+      # 2.2. Libera espacio en el disco del runner antes de construir
+      - name: Free up disk space
+        uses: easimon/maximize-build-space-action@v10
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-large-packages: 'true'
+          remove-android: 'true'
+          remove-swift: 'true'
+          remove-go: 'true'
+          remove-java: 'true'
+
       # --- FASE DE BUILD (Compilación en Unity con Licencia PRO) ---
       
-      # 2.2. Compila el proyecto con game-ci (Método Profesional)
+      # 2.3. Compila el proyecto con game-ci (Método Profesional)
       - name: Build 3DLab APK
         uses: game-ci/unity-builder@v4
         env:
-          # Usamos el Serial de la licencia Pro, mucho más simple
+          # Usamos el Serial de la licencia Pro
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }} 
         with:
           targetPlatform: Android 
@@ -36,7 +51,7 @@ jobs:
 
       # --- FASE DE DEPLOY (Despliegue en Meta) ---
 
-      # 2.3. Instala la herramienta de Meta (Oculus CLI)
+      # 2.4. Instala la herramienta de Meta (Oculus CLI)
       - name: Install Oculus CLI
         run: |
           curl -LO https://www.oculus.com/download_app/?id=1462426033810370
@@ -44,7 +59,7 @@ jobs:
           unzip ovr-platform-util.zip
           chmod +x ovr-platform-util
 
-      # 2.4. Sube el APK al canal ALPHA
+      # 2.5. Sube el APK al canal ALPHA
       - name: Upload APK to Meta App Lab (ALPHA)
         run: |
           ./ovr-platform-util upload-quest-build \
@@ -52,4 +67,4 @@ jobs:
           --app_secret ${{ secrets.META_APP_SECRET }} \
           --apk builds/3DLab-Build.apk \
           --channel ALPHA \
-          --notes "Build automático (v2) desde GitHub Actions"
+          --notes "Build automático (v3) desde GitHub Actions"
