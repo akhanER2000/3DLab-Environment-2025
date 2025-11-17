@@ -63,10 +63,9 @@ jobs:
       - name: Install Oculus CLI
         run: |
           # ¡CORRECCIÓN AQUÍ!
-          # Usamos '-o [NOMBRE]' para forzar el nombre del archivo y evitar el error "Remote file name has no length"
-          curl -L https://www.oculus.com/download_app/?id=1462426033810370 -o ovr-platform-util.zip
+          # Añadimos comillas a la URL para protegerla
+          curl -L "https://www.oculus.com/download_app/?id=1462426033810370" -o ovr-platform-util.zip
           
-          # Ya no necesitamos el comando 'mv' porque el archivo ya se llama bien
           unzip ovr-platform-util.zip
           chmod +x ovr-platform-util
 
