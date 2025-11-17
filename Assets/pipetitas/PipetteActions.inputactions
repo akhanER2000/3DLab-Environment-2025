@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "name": "PipetteActions",
+    "maps": [
+        {
+            "name": "Pipette",
+            "id": "5c6bddb5-b85b-4e67-a39c-0b0355548dec",
+            "actions": [
+                {
+                    "name": "Suction",
+                    "type": "Button",
+                    "id": "9c3093a4-1528-4510-9a87-214edee33aea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Release",
+                    "type": "Button",
+                    "id": "e73b12f8-863e-4a84-9712-86cebcc2e0e1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "638e6de3-78f4-4e92-9ca5-5730e7d64e42",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Suction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89c8b16a-35b6-440f-887f-bc81ac44b438",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Suction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77199dd6-59ec-4b06-96f2-3cab5e4bd570",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Release",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ca46938-fad9-4716-bee3-4a118a3721a9",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Release",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

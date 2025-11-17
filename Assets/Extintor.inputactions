@@ -1,0 +1,54 @@
+{
+    "name": "Extintor",
+    "maps": [
+        {
+            "name": "Extintor",
+            "id": "dfa02148-45c3-4e20-a3b5-06eb8181d422",
+            "actions": [
+                {
+                    "name": "RemovePin",
+                    "type": "Button",
+                    "id": "9e7bee79-fbd5-488e-9cff-987161ce31ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Spray",
+                    "type": "Button",
+                    "id": "9c7c7b02-734f-4189-ab75-935f1be4800f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "51ce938f-64d3-4529-8f59-05fe2e9c4fe7",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RemovePin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d755f877-16f4-4f24-bbac-fe61b59fd403",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

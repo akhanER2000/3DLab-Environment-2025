@@ -1,0 +1,13 @@
+# Este es un .gitignore estándar de Unity
+
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Archivos de SO
+.DS_Store
+Thumbs.db

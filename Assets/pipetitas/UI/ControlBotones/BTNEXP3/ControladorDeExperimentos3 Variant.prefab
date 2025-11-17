@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6714870302877020639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 258684196046329997, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_Name
+      value: ControladorDeExperimentos3 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488398392905273824, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885980367383319404}
+    - target: {fileID: 1488398392905273824, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IniciarExperimento
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900140185576743039, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946053753607269119, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885980367383319404}
+    - target: {fileID: 1946053753607269119, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TerminarExperimento
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321626336244291432, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_text
+      value: "Experimento Medici\xF3n pH\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321626336244291432, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_fontSize
+      value: 22.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.595
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.416
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000106717106375250, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484909934839440859, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_text
+      value: "Terminar experimento Medici\xF3n pH"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484909934839440859, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      propertyPath: m_fontSize
+      value: 21.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8302408521357567829, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 258684196046329997, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 885980367383319404}
+  m_SourcePrefab: {fileID: 100100000, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+--- !u!1 &1611418238601741404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5434976888134874499, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+  m_PrefabInstance: {fileID: 6714870302877020639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6820425733221165394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 258684196046329997, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+  m_PrefabInstance: {fileID: 6714870302877020639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885980367383319404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820425733221165394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcedb47534940ba49b429b1699331284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonIniciar: {fileID: 6966000716468757356}
+  botonTerminar: {fileID: 1611418238601741404}
+  prefabsInicialesDelExperimento:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  prefabsDeRepuesto:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  evaluationPanel: {fileID: 0}
+  otrosControladores:
+  - {fileID: 0}
+  - {fileID: 0}
+  trofeoAsociado: {fileID: 0}
+  audioSource: {fileID: 0}
+  sonidoDesbloqueo: {fileID: 8300000, guid: 01fc16e40197d7e48856e595bd5ce92b, type: 3}
+  sonidoVictoria: {fileID: 0}
+--- !u!1 &6966000716468757356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4439483016249692851, guid: 82d9a8a9beccc8b4ab61d1fb6134dd59, type: 3}
+  m_PrefabInstance: {fileID: 6714870302877020639}
+  m_PrefabAsset: {fileID: 0}
