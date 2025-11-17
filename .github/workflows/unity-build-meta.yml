@@ -38,24 +38,24 @@ jobs:
       - name: Build 3DLab APK
         uses: game-ci/unity-builder@v4
         env:
-          # Secretos de Licencia
+          # Secretos de Licencia (Estos SÍ van en env:)
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }} 
           
-          # Secretos de Firmado (¡AHORA COMPLETOS!)
-          ANDROID_KEYSTORE_PASS: ${{ secrets.ANDROID_KEYSTORE_PASS }}
-          ANDROID_KEY_ALIAS_NAME: ${{ secrets.ANDROID_KEY_ALIAS_NAME }}
-          ANDROID_KEY_ALIAS_PASS: ${{ secrets.ANDROID_KEY_ALIAS_PASS }}
-          
         with:
+          # Parámetros de Build (Estos van en with:)
           targetPlatform: Android 
           buildName: 3DLab-Build 
           buildsPath: builds
-          # Le decimos a Unity dónde encontrar el Keystore que acabamos de crear
-          # androidKeystoreName: user.keystore
-          # Le decimos a Unity que la ruta del Keystore es la raíz del proyecto
-          # androidKeystorePath: ${{ github.workspace }} 
+          
+          # --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
+          # Parámetros de Firmado (Estos TAMBIÉN van en with:)
+          androidKeystoreName: user.keystore
+          androidKeystorePath: ${{ github.workspace }}
+          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.ANDROID_KEY_ALIAS_NAME }}
+          androidKeyaliasPass: ${{ secrets.ANDROID_KEY_ALIAS_PASS }}
 
       # --- FASE DE DEPLOY (Despliegue en Meta) ---
 
