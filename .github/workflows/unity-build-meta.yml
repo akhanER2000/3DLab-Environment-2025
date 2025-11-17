@@ -51,7 +51,7 @@ jobs:
           
           # --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
           # Parámetros de Firmado (Estos TAMBIÉN van en with:)
-          androidKeystoreName: user.keystore
+          androidKeystoreName: 3dlab.keystore
           androidKeystorePath: ${{ github.workspace }}
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEY_ALIAS_NAME }}
