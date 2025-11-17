@@ -1,0 +1,32 @@
+# Nombre del flujo de trabajo de prueba
+name: TEST - Probar descarga de Oculus CLI
+
+# Esto añade un botón "Run workflow" en la pestaña Actions
+on:
+  workflow_dispatch:
+
+jobs:
+  test-download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (Requerido por el runner)
+        uses: actions/checkout@v4
+
+      # --- ¡AQUÍ ESTÁ LA PRUEBA REAL! ---
+      - name: Intentar Instalar Oculus CLI (Con Comillas)
+        run: |
+          echo "Intentando descargar la herramienta..."
+          
+          # 1. El comando corregido
+          curl -L "https://www.oculus.com/download_app/?id=1462426033810370" -o ovr-platform-util.zip
+          
+          echo "Descarga completa. Revisando archivo..."
+          
+          # 2. Verificamos que el archivo existe y tiene tamaño
+          ls -l ovr-platform-util.zip
+          
+          # 3. La prueba de fuego: si esto funciona, el ZIP es válido
+          echo "Intentando descomprimir..."
+          unzip ovr-platform-util.zip
+          
+          echo "¡ÉXITO! El archivo ZIP es válido y se descomprimió."
