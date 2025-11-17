@@ -1,33 +1,22 @@
 # Nombre del flujo de trabajo de prueba
-name: TEST - Probar descarga de Oculus CLI (v2)
+name: TEST - Probar instalación de Oculus CLI (v3)
 
-# Esto añade un botón "Run workflow" en la pestaña Actions
 on:
   workflow_dispatch:
 
 jobs:
-  test-download:
+  test-install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout (Requerido por el runner)
+        uses: actions/checkout@v4
 
       # --- ¡AQUÍ ESTÁ LA PRUEBA REAL! ---
-      - name: Intentar Instalar Oculus CLI (Con User-Agent)
-        run: |
-          echo "Intentando descargar la herramienta (simulando ser Chrome)..."
-          
-          # 1. El comando corregido con -A (User-Agent)
-          curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" "https://www.oculus.com/download_app/?id=1462426033810370" -o ovr-platform-util.zip
-          
-          echo "Descarga completa. Revisando archivo..."
-          ls -l ovr-platform-util.zip
-          
-          # 2. Verificamos el TIPO de archivo (esto nos dirá si es HTML o ZIP)
-          echo "Verificando tipo de archivo..."
-          file ovr-platform-util.zip
-          
-          # 3. La prueba de fuego
-          echo "Intentando descomprimir..."
-          unzip ovr-platform-util.zip
-          
-          echo "¡ÉXITO! El archivo ZIP es válido y se descomprimió."
+      # Usamos la acción de la comunidad para instalar la CLI
+      - name: Setup ovr-platform-util
+        uses: RageAgainstThePixel/setup-ovr-platform-util@v1
+       
+
+      # Verificamos que se instaló corriendo el comando 'version'
+      - name: Verify Install
+        run: ovr-platform-util version
