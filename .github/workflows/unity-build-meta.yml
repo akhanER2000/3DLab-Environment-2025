@@ -60,21 +60,16 @@ jobs:
       # --- FASE DE DEPLOY (Despliegue en Meta) ---
 
       # 2.4. Instala la herramienta de Meta (Oculus CLI)
-      - name: Install Oculus CLI
-        run: |
-          # ¡CORRECCIÓN AQUÍ!
-          # Añadimos comillas a la URL para protegerla
-          curl -L "https://www.oculus.com/download_app/?id=1462426033810370" -o ovr-platform-util.zip
-          
-          unzip ovr-platform-util.zip
-          chmod +x ovr-platform-util
+      - name: Setup ovr-platform-util
+        uses: RageAgainstThePixel/setup-ovr-platform-util@v1
 
       # 2.5. Sube el APK al canal ALPHA
       - name: Upload APK to Meta App Lab (ALPHA)
         run: |
-          ./ovr-platform-util upload-quest-build \
+          # Ahora el comando 'ovr-platform-util' funcionará
+          ovr-platform-util upload-quest-build \
           --app_id ${{ secrets.META_APP_ID }} \
           --app_secret ${{ secrets.META_APP_SECRET }} \
           --apk builds/3DLab-Build.apk \
           --channel ALPHA \
-          --notes "Build automático (v4) desde GitHub Actions"
+          --notes "Build automático (v8) desde GitHub Actions""
