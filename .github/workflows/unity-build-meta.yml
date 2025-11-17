@@ -34,11 +34,12 @@ jobs:
 
       # --- FASE DE BUILD (Compilación en Unity con Licencia PRO) ---
       
-      # 2.3. Compila el proyecto con game-ci (Método Profesional)
       - name: Build 3DLab APK
         uses: game-ci/unity-builder@v4
         env:
-          # Usamos el Serial de la licencia Pro
+          # AHORA SÍ: Añadimos email y pass junto con el serial
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }} 
         with:
           targetPlatform: Android 
