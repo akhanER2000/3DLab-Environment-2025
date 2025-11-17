@@ -1,0 +1,58 @@
+# Nombre del flujo de trabajo que verás en la pestaña "Actions" de GitHub
+name: Build 3DLab y Despliegue en Meta
+
+# 1. DISPARADOR: Cuándo debe ejecutarse
+on:
+  push:
+    branches:
+      - main  # Se activa solo cuando subes cambios a la rama 'main'
+
+# 2. TRABAJOS: Qué debe hacer
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Usamos un servidor virtual Linux
+
+    steps:
+      # --- FASE DE PREPARACIÓN ---
+
+      # 2.1. Clona tu repositorio (el robot descarga tu código)
+      - name: Checkout 3DLab Repository
+        uses: actions/checkout@v4
+
+      # 2.2. Maneja los archivos grandes (LFS)
+      - name: Checkout LFS
+        uses: actions/checkout-lfs@v1
+
+      # --- FASE DE BUILD (Compilación en Unity) ---
+
+      # 2.3. Compila el proyecto con game-ci (Plan B)
+      - name: Build 3DLab APK
+        uses: game-ci/unity-builder@v4
+        env:
+          # (Se omitió UNITY_LICENSE para forzar activación por email)
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: Android 
+          buildName: 3DLab-Build 
+          buildsPath: builds  
+
+      # --- FASE DE DEPLOY (Despliegue en Meta) ---
+
+      # 2.4. Instala la herramienta de Meta (Oculus CLI)
+      - name: Install Oculus CLI
+        run: |
+          curl -LO https://www.oculus.com/download_app/?id=1462426033810370
+          mv 1462426033810370 ovr-platform-util.zip
+          unzip ovr-platform-util.zip
+          chmod +x ovr-platform-util
+
+      # 2.5. Sube el APK al canal ALPHA
+      - name: Upload APK to Meta App Lab (ALPHA)
+        run: |
+          ./ovr-platform-util upload-quest-build \
+          --app_id ${{ secrets.META_APP_ID }} \
+          --app_secret ${{ secrets.META_APP_SECRET }} \
+          --apk builds/3DLab-Build.apk \
+          --channel ALPHA \
+          --notes "Build automático desde GitHub Actions"
