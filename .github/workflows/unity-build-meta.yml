@@ -57,6 +57,12 @@ jobs:
           androidKeyaliasName: ${{ secrets.ANDROID_KEY_ALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEY_ALIAS_PASS }}
 
+      # --- ¡¡NUEVO PASO DE DEPURACIÓN!! ---
+      - name: Listar archivos de build
+        run: |
+          echo "Mostrando el contenido de la carpeta 'builds'..."
+          ls -R builds
+
       # --- FASE DE DEPLOY (Despliegue en Meta) ---
 
       # 2.4. Instala la herramienta de Meta (Oculus CLI)
@@ -67,5 +73,5 @@ jobs:
       - name: Upload APK to Meta App Lab (ALPHA)
         run: |
           # ¡CORRECCIÓN AQUÍ!
-          # Comando en una sola línea para evitar errores de 'unexpected EOF'
-          ovr-platform-util upload-quest-build --app_id ${{ secrets.META_APP_ID }} --app_secret ${{ secrets.META_APP_SECRET }} --apk builds/3DLab-Build.apk --channel ALPHA --notes "Build automático (v9) desde GitHub Actions"
+          # Añadimos la subcarpeta 'Android' a la ruta del APK
+          ovr-platform-util upload-quest-build --app_id ${{ secrets.META_APP_ID }} --app_secret ${{ secrets.META_APP_SECRET }} --apk builds/Android/3DLab-Build.apk --channel ALPHA --notes "Build automático (v10) desde GitHub Actions"
