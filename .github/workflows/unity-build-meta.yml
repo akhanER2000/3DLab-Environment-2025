@@ -19,22 +19,18 @@ jobs:
       - name: Checkout 3DLab Repository
         uses: actions/checkout@v4
         with:
-          lfs: true # Esto reemplaza el paso 'checkout-lfs' que falló
+          lfs: true 
 
-      # --- ¡¡NUEVO PASO!! ---
+      # --- ¡¡NUEVO PASO!! (Método Manual) ---
       # 2.2. Libera espacio en el disco del runner antes de construir
-      - name: Free up disk space
-        uses: easimon/maximize-build-space-action@v10
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-haskell: 'true'
-          remove-large-packages: 'true'
-          remove-android: 'true'
-          remove-swift: 'true'
-          remove-go: 'true'
-          remove-java: 'true'
+      - name: Free up disk space (Manual)
+        run: |
+          echo "Limpiando espacio en disco..."
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          echo "Espacio después de limpiar:"
+          df -h
 
       # --- FASE DE BUILD (Compilación en Unity con Licencia PRO) ---
       
@@ -67,4 +63,4 @@ jobs:
           --app_secret ${{ secrets.META_APP_SECRET }} \
           --apk builds/3DLab-Build.apk \
           --channel ALPHA \
-          --notes "Build automático (v3) desde GitHub Actions"
+          --notes "Build automático (v4) desde GitHub Actions"
