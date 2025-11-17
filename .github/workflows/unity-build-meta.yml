@@ -66,10 +66,6 @@ jobs:
       # 2.5. Sube el APK al canal ALPHA
       - name: Upload APK to Meta App Lab (ALPHA)
         run: |
-          # Ahora el comando 'ovr-platform-util' funcionará
-          ovr-platform-util upload-quest-build \
-          --app_id ${{ secrets.META_APP_ID }} \
-          --app_secret ${{ secrets.META_APP_SECRET }} \
-          --apk builds/3DLab-Build.apk \
-          --channel ALPHA \
-          --notes "Build automático (v8) desde GitHub Actions""
+          # ¡CORRECCIÓN AQUÍ!
+          # Comando en una sola línea para evitar errores de 'unexpected EOF'
+          ovr-platform-util upload-quest-build --app_id ${{ secrets.META_APP_ID }} --app_secret ${{ secrets.META_APP_SECRET }} --apk builds/3DLab-Build.apk --channel ALPHA --notes "Build automático (v9) desde GitHub Actions"
